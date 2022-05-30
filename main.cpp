@@ -297,7 +297,7 @@ bool EncryptOrDecryptOnce(bool encrypt,
   // finish
   result =
 	keystore->finishOperation(handle, empty_params,
-				  std::string(), /* signature_to_verify */
+				  std::string(), std::string(), 
 				  &ignored_params, &output_data);
   if (!result.isOk()) {
     cerr << "EncryptOrDecrypt FinishOperation failed: " << result.getErrorCode() << "\n";
@@ -544,7 +544,7 @@ int SignKeyGen(const std::string& key_name)
   // finish
   result =
 	keystore->finishOperation(handle, empty_params,
-				  std::string(), /* signature_to_verify */
+				  std::string(), std::string(), 
 				  &ignored_params, &output_data);
   if (!result.isOk()) {
     cerr << "EncryptOrDecrypt FinishOperation failed: " << result.getErrorCode() << "\n";
